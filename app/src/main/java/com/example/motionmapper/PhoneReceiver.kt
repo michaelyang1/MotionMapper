@@ -21,7 +21,7 @@ import java.io.FileOutputStream
 class PhoneReceiver : BroadcastReceiver() {
     /**
      * Function to receive incoming phone calls from app background
-     * **/
+     */
     override fun onReceive(p0: Context?, p1: Intent?) {
         // save state of phone call
         val state = p1?.getStringExtra(TelephonyManager.EXTRA_STATE)
