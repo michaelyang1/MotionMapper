@@ -13,6 +13,7 @@ import android.util.Log
 import androidx.core.content.ContextCompat.getSystemService
 import android.content.ComponentName
 import android.os.Environment
+import android.widget.Toast
 import java.io.File
 import java.io.FileOutputStream
 
@@ -44,7 +45,7 @@ class PhoneReceiver : BroadcastReceiver() {
                         // append motion locations
                         motions.add(listOf(ax, ay, az))
                         ++count
-                        Log.e("Processing", "$ax, $ay, $az")
+                        Log.e("PHONE RECEIVER", "$ax, $ay, $az")
 
                         // if phone is picked up, write to file
                         if (count == MAX_COUNT) {
@@ -52,7 +53,7 @@ class PhoneReceiver : BroadcastReceiver() {
                             val ax_f = finalMotion[0]
                             val ay_f = finalMotion[1]
                             val az_f = finalMotion[2]
-                            Log.e("Final", "$ax_f, $ay_f, $az_f")
+                            Log.e("PHONE RECEIVER", "Data collection is complete")
                             // if device is still flat, no need to write to file
                             if (isFlat(ax_f.toDouble(), ay_f.toDouble(), az_f.toDouble())) {
                                 return
@@ -100,7 +101,7 @@ class PhoneReceiver : BroadcastReceiver() {
 
         // calculate tilt (inclination)
         val inclination = Math.round(Math.toDegrees(Math.acos(z_norm))).toInt()
-        Log.e("Inclination", "$inclination")
+        Log.e("PHONE RECEIVER", "Inclination: $inclination")
 
         // check if device is within threshold of being flat (tolerance values)
         if (inclination < 25 || inclination > 155) { // within (flat)
