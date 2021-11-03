@@ -7,7 +7,7 @@
 ## How to use the app 
 1) Upon first using the app, give permission for the app to monitor phone calls
 2) Tap the three dots to open advanced settings for the emulator (last option)
-3) Select Phone and click "Call Device" to make a call to the emulator (make sure airplane mode is turned off)
+3) Select "Phone" and click "Call Device" to make a call to the emulator (make sure airplane mode is turned off)
 4) While the phone is ringing, tap on "Virtual sensors" and adjust the x, y, and z rotations of the phone to simulate a user picking up their device for a call. 
 5) Switch logcat type to "Error" to see progress of the data collection 
 6) Upon data collection conclusion, go into Android Studio's View >> Tool Windows >> Device File Explorer >> sdcard >> Android >> data >> com.example.motionmapper >> files >> MotionsDirectory >> motions.txt
